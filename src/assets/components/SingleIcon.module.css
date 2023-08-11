@@ -1,0 +1,85 @@
+.button {
+  background: red;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  position: relative;
+
+  /* z-index: -1; */
+}
+
+.choice {
+  background: white;
+  border-radius: 50%;
+  border: none;
+  height: 15rem;
+  width: 15rem;
+  box-shadow: inset 0px 12px 0 -6px rgb(223, 223, 223);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  /* z-index: 0; */
+}
+
+.housePicked {
+  background: rgb(205, 65, 65);
+  border-radius: 50%;
+  border: none;
+  height: 15rem;
+  width: 15rem;
+  box-shadow: inset 0px 12px 0 -6px rgb(223, 223, 223);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  /* z-index: 0; */
+}
+
+.button {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.paper {
+  background: #4a67ef;
+}
+.rock {
+  background: #dc3755;
+}
+
+.scissors {
+  background: #eaa617;
+}
+
+.choiceContainer:nth-child(3) {
+  /* background: orange; */
+  position: absolute;
+  bottom: -4rem;
+}
+
+.bigger {
+  height: 30rem;
+  width: 30rem;
+}
+
+.biggerWhite {
+  height: 18rem;
+  width: 18rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 4.7rem;
+  margin: 0;
+}
+
+.black {
+  background: #16213d;
+  box-shadow: inset 0px 12px 0 -6px #16213d;
+}

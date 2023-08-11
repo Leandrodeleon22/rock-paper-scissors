@@ -1,0 +1,108 @@
+.container {
+  height: 100vh;
+  padding-top: 7rem;
+}
+.header {
+  border: 2px solid rgba(250, 250, 250, 0.5);
+  border-radius: 1.5 rem;
+  padding: 2.5rem;
+  width: 70rem;
+  display: flex;
+  justify-content: space-between;
+  /* margin: 4.5rem 0 0 0; */
+}
+
+.title {
+  font-size: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+
+.score {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem 5rem 2rem 5rem;
+  border-radius: 0.5rem;
+}
+
+.score span:first-child {
+  font-size: 1.5rem;
+  color: blue;
+  margin: -1rem 0 1.5rem 0;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.score span:last-child {
+  font-size: 4.5rem;
+  color: gray;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+.choices {
+  margin-top: 6rem;
+  background-image: url("./assets/images/bg-triangle.svg");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: 14rem 8rem;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  position: relative;
+}
+
+/* .choices .choiceContainer:not(:last-child) {
+  justify-items: center;
+  height: 1rem;
+} */
+
+.choices img {
+  /* background-color: white; */
+  width: 50%;
+}
+
+.rules {
+  background: none;
+  height: 4rem;
+  border: 1.75px solid rgba(250, 250, 250, 0.5);
+  padding: 0.75rem 2rem 0.75rem 2rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.25rem;
+  position: absolute;
+  bottom: 15rem;
+  right: 15rem;
+}
+
+.pickedContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 6.5rem;
+
+  /* grid-template-rows: 1fr 1fr; */
+
+  /* margin: 0;
+  padding: 0; */
+}
+
+.pickedContainer p {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 6.7rem;
+  letter-spacing: 0.3rem;
+}
+
+.picked {
+  display: flex;
+  justify-content: space-evenly;
+}
