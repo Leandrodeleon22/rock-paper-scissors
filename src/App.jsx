@@ -5,9 +5,7 @@ import scissors from "./assets/images/icon-scissors.svg";
 import rock from "./assets/images/icon-rock.svg";
 import SingleIcon from "./assets/components/SingleIcon";
 import RulesModal from "./assets/components/RulesModal";
-import { useEffect, useRef, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getChoice } from "./features/choicesSlice";
+import { useEffect, useState } from "react";
 
 const choices = [
   { id: "paper", image: paper, outerColor: "paper" },
@@ -16,17 +14,16 @@ const choices = [
 ];
 
 function App() {
-  const dispatch = useDispatch();
-  const { score, chosen } = useSelector((store) => store.choices);
+  // const { score } = useSelector((store) => store.choices);
   const [modalOpen, setModalOpen] = useState(true);
   const [gameStatus, setGameStatus] = useState("picking");
   const [housePicked, setHousePicked] = useState("");
   const [userPicked, setUserPicked] = useState([]);
   const [message, setMessage] = useState("");
+  const [score, setScore] = useState(0);
 
   const isPicking = gameStatus === "picking";
   const isPicked = gameStatus === "picked";
-  const isFinal = gameStatus === "someoneWon";
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -51,6 +48,12 @@ function App() {
     setModalOpen(false);
   };
 
+  const handlePlayAgain = () => {
+    setGameStatus("picking");
+    setMessage("");
+    setHousePicked("");
+  };
+
   const handleChosen = (choice) => {
     const newHousePicked = getHousePick(choices);
     const user = getUserPick(choice);
@@ -60,25 +63,33 @@ function App() {
 
       setTimeout(() => {
         let messageResult;
+        let totalScore = score;
+
         if (user.id === newHousePicked.id) {
-          messageResult = "Its a tie";
+          messageResult = "It's a tie";
         } else if (
           (user.id === "rock" && newHousePicked.id === "scissors") ||
           (user.id === "paper" && newHousePicked.id === "rock") ||
           (user.id === "scissors" && newHousePicked.id === "paper")
         ) {
           messageResult = "You Win";
+          setScore(totalScore + 1);
         } else {
           messageResult = "You Lose";
-        }
 
+          setScore(totalScore - 1);
+        }
+        if (totalScore === 0 && messageResult === "You Lose") {
+          setScore(0);
+        }
         setMessage(messageResult);
-      }, 1000);
+      }, 1200);
     }, 1000);
     setUserPicked(user);
     setGameStatus("picked");
   };
 
+  console.log(gameStatus);
   // useEffect(() => {
   //   setTimeout(() => {
   //     getWinner(chosen.id, housePicked.id);
@@ -140,7 +151,12 @@ function App() {
                 addStyle="bigger"
               />
             </div>
-
+            {message && (
+              <div className={classes.result}>
+                <h1>{message}</h1>
+                <button onClick={handlePlayAgain}>PLAY AGAIN</button>
+              </div>
+            )}
             <div className={classes.pickedContainer}>
               <p>THE HOUSE PICKED</p>
               <SingleIcon
