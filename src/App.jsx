@@ -77,7 +77,7 @@ function App() {
         } else {
           messageResult = "You Lose";
 
-          setScore(totalScore - 1);
+          // setScore(totalScore - 1);
         }
         if (totalScore === 0 && messageResult === "You Lose") {
           setScore(0);
@@ -151,12 +151,15 @@ function App() {
                 addStyle="bigger"
               />
             </div>
-            {message && (
-              <div className={classes.result}>
-                <h1>{message}</h1>
-                <button onClick={handlePlayAgain}>PLAY AGAIN</button>
-              </div>
-            )}
+            <div className={classes.resultContainer}>
+              {message && (
+                <div className={classes.result}>
+                  <h1>{message}</h1>
+                  <button onClick={handlePlayAgain}>PLAY AGAIN</button>
+                </div>
+              )}
+            </div>
+
             <div className={classes.pickedContainer}>
               <p>THE HOUSE PICKED</p>
               <SingleIcon

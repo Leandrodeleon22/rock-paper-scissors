@@ -1,5 +1,5 @@
 .button {
-  background: red;
+  /* background: red; */
   height: 20rem;
   width: 20rem;
   border-radius: 50%;
@@ -64,8 +64,8 @@
 }
 
 .bigger {
-  height: 30rem;
-  width: 30rem;
+  height: 25rem;
+  width: 25rem;
 }
 
 .biggerWhite {
@@ -75,11 +75,32 @@
   justify-content: center;
   align-items: center;
   top: 0;
-  left: 4.7rem;
+  left: 2.5rem;
   margin: 0;
 }
 
 .black {
   background: #16213d;
   box-shadow: inset 0px 12px 0 -6px #16213d;
+}
+
+@media only screen and (max-width: 23.44em) {
+  .choice {
+    height: 12rem;
+    width: 12rem;
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+  .button {
+    height: 15rem;
+    width: 15rem;
+    margin-right: 0.5rem;
+  }
+  .choiceContainer:nth-child(2) {
+    margin-left: 1rem;
+  }
+  .biggerWhite {
+    left: 0.35rem;
+    top: 0.1rem;
+  }
 }
