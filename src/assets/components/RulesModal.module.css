@@ -33,7 +33,7 @@
   background: none;
 }
 
-@media only screen and (max-width: 23.44em) {
+@media only screen and (max-width: 25.875em) {
   .modal {
     height: 100vh;
     width: 100%;

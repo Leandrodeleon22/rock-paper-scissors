@@ -84,7 +84,7 @@
   box-shadow: inset 0px 12px 0 -6px #16213d;
 }
 
-@media only screen and (max-width: 23.44em) {
+@media only screen and (max-width: 25.875em) {
   .choice {
     height: 12rem;
     width: 12rem;
